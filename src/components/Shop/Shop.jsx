@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import Product from "../Product/Product";
 import { addToDb, deleteShoppingCart, getShoppingCart } from "../../utilities/LocalStorage";
 import "./Shop.css";
 import Cart from "../Cart/Cart";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -58,7 +61,7 @@ const Shop = () => {
     setCart([]);
     deleteShoppingCart();
   };
-
+  const count = 1;
   return (
     <div className="shop-container mt-5">
       <Container>
@@ -68,7 +71,13 @@ const Shop = () => {
           ))}
         </div>
       </Container>
-      <Cart cart={cart} />
+      <Cart cart={cart} handleClearCart={handleClearCart} count={count}>
+      <Button className="w-100 ">
+            <Link className="text-white" to="/orders">
+              Review Order <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
+          </Button>
+      </Cart>
     </div>
   );
 };

@@ -1,9 +1,16 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faCreditCard,
+  faTrashCan,
+  faVectorSquare,
+} from "@fortawesome/free-solid-svg-icons";
+import { deleteShoppingCart } from "../../utilities/LocalStorage";
+import { Link } from "react-router-dom";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleClearCart, children }) => {
   let total = 0;
   let totalShipping = 0;
   let quantity = 0;
@@ -14,7 +21,7 @@ const Cart = ({ cart }) => {
   }
   const tax = (total * 7) / 100;
   const grandTotal = total + totalShipping + tax;
-  console.log(total, totalShipping);
+
   return (
     <div className=" rounded-2 sticky-top ">
       <div className="bg-warning sticky-top px-3 py-5 ">
@@ -24,13 +31,12 @@ const Cart = ({ cart }) => {
         <p>Total Shipping Charge: ${totalShipping}</p>
         <p>Tax: ${tax}</p>
         <h6>Grand Total: ${grandTotal}</h6>
-        <Button className="w-100 my-2 bg-danger">
+        <Button onClick={handleClearCart} className="w-100 my-2 bg-danger">
           Clear Cart <FontAwesomeIcon icon={faTrashCan} />
         </Button>
         <br />
-        <Button className="w-100">
-          Review Order <FontAwesomeIcon icon={faArrowRight} />{" "}
-        </Button>
+        {children}
+          
       </div>
     </div>
   );
