@@ -1,0 +1,18 @@
+.box-shadow {
+    box-shadow: -15px 17px 4px -6px rgba(255, 224, 179, 0.69);
+    -webkit-box-shadow: -15px 17px 4px -6px rgba(255, 224, 179, 0.69);
+    -moz-box-shadow: -15px 17px 4px -6px rgba(255, 224, 179, 0.69);
+
+}
+
+.primary-background {
+    background-color: rgba(255, 153, 0, 0.3);
+}
+
+.primary-background:hover {
+    background-color: rgb(241, 183, 56);
+}
+
+.primary-color {
+    color: #FF9900;
+}

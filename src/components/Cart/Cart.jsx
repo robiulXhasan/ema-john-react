@@ -23,7 +23,7 @@ const Cart = ({ cart, handleClearCart, children }) => {
   const grandTotal = total + totalShipping + tax;
 
   return (
-    <div className=" rounded-2 sticky-top ">
+    <div className=" rounded-2 ">
       <div className="bg-warning sticky-top px-3 py-5 ">
         <h4 className="text-center">Order Summary</h4>
         <p>Selected Items: {quantity}</p>
@@ -36,7 +36,6 @@ const Cart = ({ cart, handleClearCart, children }) => {
         </Button>
         <br />
         {children}
-          
       </div>
     </div>
   );

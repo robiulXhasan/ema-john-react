@@ -72,11 +72,11 @@ const Shop = () => {
         </div>
       </Container>
       <Cart cart={cart} handleClearCart={handleClearCart} count={count}>
-      <Button className="w-100 ">
-            <Link className="text-white" to="/orders">
-              Review Order <FontAwesomeIcon icon={faArrowRight} />
-            </Link>
-          </Button>
+        <Button className="w-100 ">
+          <Link className="text-white" to="/orders">
+            Review Order <FontAwesomeIcon icon={faArrowRight} />
+          </Link>
+        </Button>
       </Cart>
     </div>
   );

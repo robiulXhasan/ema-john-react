@@ -36,12 +36,12 @@ const Orders = () => {
           </div>
         </div>
         <div className="col-md-4 ">
-          <Cart cart={cart} handleClearCart={handleClearCart} >
-          <Button className="w-100 ">
-            <Link className="text-white" to="/orders">
-              Proceed Checkout <FontAwesomeIcon icon={faCreditCard} />
-            </Link>
-          </Button>
+          <Cart cart={cart} handleClearCart={handleClearCart}>
+            <Button className="w-100 ">
+              <Link className="text-white" to="/checkout">
+                Proceed Checkout <FontAwesomeIcon icon={faCreditCard} />
+              </Link>
+            </Button>
           </Cart>
         </div>
       </div>
